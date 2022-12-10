@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,328 @@
   <title>Project</title>
 </head>
 <body>
+  
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#" class="navbar__logo">
+        <img
+          src="./assets/icons/logo.svg"
+          alt="website logo"
+        >
+      </a>
+      <section class="navbar__about">
+        <ul class="navbar__about-items">
+          <li class="navbar__about-item navbar-hover">
+            <a href="#">Project</a>
+          </li>
+          <li class="navbar__about-item navbar-hover">
+            <a href="#">Contacts</a>
+          </li>
+          <li class="navbar__about-item navbar-hover">
+            <a href="#">Our Mission</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="navbar__mobile-menu">
+        <div class="navbar__mobile-menu-wrapper"> 
+        </div>
+      </section>
+
+      <section class="navbar__menu">
+        <ul class="navbar__menu-items">
+          <li class="navbar__menu-item navbar__menu-phone">
+            +44 0000 000000
+          </li>
+          <li class="
+            navbar__menu-item 
+            navbar__menu-login 
+            navbar-hover--no-border
+          "> 
+            <a href="#">Sign in</a>
+          </li>
+          <li 
+            class="
+              navbar__menu-item 
+              navbar__menu-create-account
+            ">
+            <a href="#">Sing up</a>
+          </li>
+          <li class="navbar__menu-item navbar__menu-lang"> 
+            <div class="navbar__menu-lang-switch">
+              <p class="is-active">Es</p>
+              <p>Eng</p>
+            </div>
+          </li>
+          <li class="navbar__menu-item navbar__mobile-toggle"> 
+            <img 
+              src="./assets/icons/hamburger.svg" 
+              class="navbar__hamburger"
+              alt="mobile navigation toggle"
+            >
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <section class="hero">
+      <div class="hero__wrapper container">
+        <h1 class="hero__title">
+          Lorem, ipsum dolor sit amet consectetur adipisicing.
+        </h1>
+        <p class="hero__caption">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil libero alias, soluta hic iure quod.
+        </p>
+        <div class="hero__buttons">
+          <button class="btn-m btn-accent">
+            I want to buy
+          </button>
+          <button class="btn-m btn-secondary">
+            I want to sell
+          </button>
+        </div>
+      </div>
+    </section>
+</header>
+
+  <main class="main">
+    <div class="order-background">
+      <section class="order container">
+        <div class="order__wrapper">
+          <article class="order__info">
+            <h2 class="order__info-title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h2>
+            <p class="order__info-content">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti officiis officia impedit repellat voluptatem minus facilis laborum nulla dolorum dolor cumque itaque modi quidem eligendi, quam iste, fugiat, quas illo.
+            </p>
+          </article>
+          <form class="order__form">
+            <section class="order__form-wrapper order__form-wrapper--start">
+              <label
+                class="order__form-item order-name"
+              >
+                Your name
+                <input
+                  type="text"
+                  name="order-name"
+                  class="order__form-input order-name-input"
+                  placeholder="John Doe"
+                  required
+                >
+              </label>
+    
+              <label
+                class="order__form-item order-company"
+              >
+                Company name
+                <input
+                  type="text"
+                  name="order-company"
+                  class="order__form-input order-company-input"
+                  placeholder="Acme Corp."
+                  required
+                >
+              </label>
+              <label
+                class="order__form-item order-email"
+              >
+                E-mail
+                <input
+                  type="email"
+                  name="order-email"
+                  class="order__form-input order-email-input"
+                  placeholder="johndoe@mail.com"
+                  required
+                >
+              </label>
+              <label
+                class="order__form-item order-phone"
+              >
+                Phone number
+    
+                <input
+                  type="text"
+                  name="order-phone"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  class="order__form-input order-phone-input"
+                  placeholder="+44 0000 000000"
+                  required
+                >
+              </label>
+              <label
+                class="order__form-item order-promo"
+              >
+                Promo
+                <input
+                  type="text"
+                  name="order-promo"
+                  class="order__form-input order-promo-input"
+                  placeholder="WWW000"
+                  required
+                >
+              </label>
+              <div class="order__form-item order-next">
+                <button class="btn-s btn-accent">
+                  Continue
+                </button>
+              </div>
+            </section>
+            <section class="order__form-wrapper order__form-wrapper--finish">
+              <label
+                class="order__form-item order-password"
+              >
+                Password
+                <input
+                  type="password"
+                  name="order-password"
+                  class="order__form-input order-password-input"
+                  placeholder="Enter passowrd"
+                  required
+                >
+              </label>
+              <label
+                class="order__form-item order-password-confirm"
+              >
+                Confirm password
+                <input
+                  name="order-password-confirm"
+                  type="password"
+                  class="order__form-input order-password-confirm-input"
+                  placeholder="Confirm password"
+                  required
+                >
+              </label>
+              <div class="order__form-item order-captcha">
+                <img
+                  src="./assets/etc/captcha.png"
+                  class="order__form-captcha"
+                  alt="captcha"
+                >
+              </div>
+              <label
+                class="order__form-item order-captcha-input"
+              >
+              Caption
+              <input
+                type="text"
+                name="order-captcha-input"
+                class="order__form-input order-captcha-value"
+                placeholder="Captcha"
+                required
+              >
+              </label>
+              <div class="order__form-item order-finish-buttons">
+                <button class="btn-s btn-secondary order-back">
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  class="btn-s btn-accent"
+                >
+                  Confirm
+                </button>
+              </div>
+              <label
+                class="order__form-item order-compliance"
+              >
+                I agree with the privacy policy
+                <input
+                  name="order-compliance"
+                  type="checkbox"
+                  class="order__form-input"
+                  required
+                >
+              </label>
+            </section>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__wrapper container">
+      <section class="footer__office">
+        <h3 class="footer__office-title office-title footer-title">
+          Locations
+        </h3>
+        <ul class="footer__office-address office-moscow">
+          <li class="footer__office-address-item">
+            Bristol
+          </li>
+          <li class="footer__office-address-item">
+            +44 0000 000000
+          </li>
+          <li class="footer__office-address-item">
+            185-189 Easton Rd, Easton,
+          </li>
+          <li class="footer__office-address-item">
+            Bristol BS5 0HQ, United Kingdom
+          </li>
+        </ul>
+        <ul class="footer__office-address office-rostov">
+          <li class="footer__office-address-item">
+            Cardiff
+          </li>
+          <li class="footer__office-address-item">
+            +44 0000 000000
+          </li>
+          <li class="footer__office-address-item">
+            76 Crwys Rd,
+          </li>
+          <li class="footer__office-address-item">
+            Cardiff CF24 4NP, United Kingdom
+          </li>
+        </ul>
+      </section>
+      <section class="footer__social">
+        <h3 class="footer__social-title footer-title">
+          Social
+        </h3>
+        <ul class="footer__social-items">
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link">
+              Instagram
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link">
+              Facebook
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="footer__contact">
+        <h3 class="footer__contact-title footer-title"> 
+          Reach out
+        </h3>
+        <ul class="footer__contact-items">
+          <li class="footer__contact-item contact-phone">
+            +44 0000 000000
+          </li>
+          <li class="footer__contact-item">
+            contact@acme.com
+          </li>
+          <li class="footer__contact-item">
+            <button 
+              class="btn-s btn-accent footer__contact-button"
+            >
+              Email
+              <img 
+                src="./assets/icons/mail-logo.svg" 
+                alt="letter icon"
+              >
+            </button>
+          </li>
+        </ul>
+      </section>
+      <p class="footer__copyright container">
+        2023 Acme Corp ©.
+      </p>
+    </div>
+  </footer>
   
 
   <script src="./main.js"></script>
