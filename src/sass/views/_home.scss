@@ -1,0 +1,87 @@
+@use '../base/' as *;
+
+.hero {
+  padding: 6rem 0;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: $spacer-jumbo;
+
+      max-width: 900px;
+      text-align: center;
+    }
+
+    &__buttons {
+      display: flex;
+      gap: $spacer-l;
+      margin: 0 auto;
+    }
+}
+
+.order-background {
+  padding: 9vh 5vw;
+  background-image: url('./assets/bg/form-bg-pattern.svg');
+}
+
+.header {
+  background-image: url('./assets/bg/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+//* ==================
+//* Typography
+//* ==================
+
+.hero {
+  color: $clr-secondary;
+
+    &__title {
+      font-family: $ff-inter;
+      font-weight: 400;
+      font-size: $fs-56;
+    }
+
+    &__caption {
+      font-family: $ff-nunito;
+      font-weight: 300;
+      font-size: $fs-26;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    &__title {
+      font-size: $fs-36;
+    }
+
+    &__caption {
+      font-size: $fs-18;
+    }
+  }
+}
+
+
+
+//* ==================
+//* Mobile
+//* ==================
+
+@media screen and (max-width: 768px) {
+  .hero {
+    &__wrapper {
+      gap: $spacer-xxxl;
+      max-width: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    &__buttons {
+      flex-direction: column;
+    }
+  }
+}

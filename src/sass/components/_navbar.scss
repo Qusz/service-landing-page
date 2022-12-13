@@ -1,0 +1,285 @@
+@use '../base/' as *;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: $spacer-xl 0;
+
+    &__logo {
+      img {
+        min-width: 98px;
+      }
+    }
+
+    &__about {
+      &-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacer-xxxl;
+
+        // To offset navbar-hover::after 2px height
+        margin-top: 2px;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      justify-content: space-between;
+
+        &-items {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: $spacer-xxxl;
+        }
+
+        &-item {
+          a {
+            padding: $spacer-m $spacer-xxxl;
+          }
+        }
+
+        &-login {
+          order: 1;
+        }
+
+        &-create-account {
+          white-space: nowrap;
+          order: 2;
+
+            a {
+              border: 1px solid $clr-black;
+              border-radius: 12px;
+            }
+        }
+
+        &-lang {
+          display: none;
+
+            &-switch {
+              display: flex;
+              gap: $spacer-s;
+            }
+        }
+
+        &-phone {
+          white-space: nowrap;
+        }
+    }
+
+    &__mobile-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 0;
+      height: 100vh;
+
+      overflow: hidden;
+
+      background-color: $clr-secondary;
+      box-shadow: 10px 0px 11px -8px rgba(34, 60, 80, 0.2);
+
+      transition: all .5s ease;
+
+        &-wrapper {
+          padding: $spacer-xxxl $spacer-s;
+          height: 100%;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: $spacer-l;
+        }
+    }
+
+    &__mobile-toggle {
+      display: none;
+    }
+
+    &__hamburger {
+      min-width: 40px;
+
+      transition: all .3s ease-in;
+
+        &.is-active {
+          transform: rotate(360deg);
+          filter: invert(77%) sepia(68%) saturate(335%) hue-rotate(358deg) brightness(88%) contrast(94%);
+        }
+    }
+}
+
+
+
+//* =============================
+//* Desktop hover/active effects
+//* =============================
+
+@media screen and (min-width: 1366px) {
+  .navbar {
+    &__logo {
+      transition: all .3s ease;
+
+        &:hover {
+          cursor: pointer;  
+        }
+
+        &:active {
+          transform: scale(1.1);
+        }
+    }
+
+    &__menu-create-account {
+      @include navbar-hover;
+    }
+  }
+
+  .navbar-hover {
+    @include navbar-hover;
+
+    &--no-border {
+      @include navbar-hover;
+    }
+    
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      box-shadow: 0px 3px 0px 0px $clr-accent;
+
+      transition: width .3s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+//* ==================
+//* Typography
+//* ==================
+
+.navbar {
+  color: $clr-secondary;
+  font-family: $ff-inter;
+  font-size: $fs-18;
+  font-weight: 500;
+
+    &__menu {
+      &-phone {
+        font-size: $fs-20;
+        font-weight: 600;
+      }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+  .navbar {
+    &__about {
+      &-items {
+        font-size: $fs-24;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    &__menu {
+      &-phone {
+        font-size: $fs-18;
+      }
+
+      &-lang-switch {
+        font-size: $fs-16;
+      }
+    }
+  }
+}
+
+
+
+//* ==================
+//* Mobile
+//* ==================
+
+@media screen and (max-width: 1366px) {
+  .navbar {
+    &__menu {
+      &-create-account {
+        @include mobile-login($clr-accent);
+
+        width: 100%;
+        margin-top: auto;
+
+          a{
+            border: none;
+            border-radius: 0;
+          }
+      }
+
+      &-login {
+        order: 2;
+      }
+    }
+
+    &__mobile-toggle {
+      display: block;
+      order: 3;
+    }
+
+    &__mobile-menu {
+      &.is-active {
+        width: 300px;
+      }
+    }
+
+    &__about {
+      &-items {
+        flex-direction: column;
+        gap: $spacer-s;
+        margin-top: 0;
+        padding-block: $spacer-l;
+      }
+
+      &-item {
+        transition: all .2s ease;
+
+          &:active {
+            color: $clr-accent;
+          }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    &__logo {
+      img {
+        min-width: 48px;
+      }
+    }
+
+    &__menu {
+      &-items {
+        gap: $spacer-s;
+      }
+
+      &-login {
+        @include mobile-login($clr-white);
+        width: 100%;
+      }
+    }
+  }
+}

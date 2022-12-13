@@ -1,0 +1,216 @@
+@use '../base/' as *;
+
+.footer {
+  position: relative;
+  margin-top: auto;
+  padding: 5rem 0;
+  background-color: $clr-primary;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__office {
+      @include footer-item-layout;
+      grid-template-areas: 
+        "title title"
+        "bristol cardiff";
+
+        &-title {
+          grid-area: title;
+        }
+
+        &-address {
+          &.office-bristol {
+            grid-area: bristol;
+          }
+
+          &.office-cardiff {
+            grid-area: cardiff;
+          }
+        }
+    }
+
+    &__social {
+      @include footer-item-layout;
+      grid-template-areas: 
+        "title"
+        "items";
+
+        &-title {
+          grid-area: title;
+        }
+
+        &-items {
+          grid-area: items;
+
+          display: flex;
+          flex-direction: column;
+          gap: $spacer-xl;
+        }
+
+        &-item {
+          transition: all .2s ease;
+
+            &:hover {
+              color: $clr-accent;
+            }
+
+            &:active {
+              color: $clr-secondary;
+            }
+        }
+    }
+
+    &__contact {
+      @include footer-item-layout;
+      grid-template-areas: 
+        "title"
+        "items";
+
+        &-title {
+          grid-area: title;
+        }
+
+        &-items {
+          grid-area: items;
+          display: flex;
+          flex-direction: column;
+          gap: $spacer-xl;
+        }
+
+        &-button {
+          width: 100%;
+        }
+    }    
+    
+    &__copyright {
+      position: absolute;
+      bottom: 10px;
+      margin: 0;
+    }
+  
+}
+
+
+
+//* ==================
+//* Typography
+//* ==================
+
+.footer {
+  font-family: $ff-nunito;
+  color: $clr-secondary;
+
+    &-title {
+      font-family: $ff-inter;
+      font-size: $fs-24;
+      font-weight: 600;
+    }
+
+    &__office-address {
+      font-size: $fs-18;
+      font-weight: 500;
+    }
+
+    &__social {
+      &-items {
+        font-size: $fs-20;
+        font-weight: 500;
+      }
+    }
+
+    &__contact {
+      &-item {
+        font-size: $fs-20;
+        font-weight: 500;
+      }
+    }
+
+    &__copyright {
+      font-size: $fs-12;
+      font-weight: 400;
+      color: $clr-secondary;
+      opacity: .7;
+    }
+}
+
+
+
+//* ==================
+//* Mobile
+//* ==================
+
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  .footer {
+    padding: $spacer-xxxl 0;
+
+      &__wrapper {
+        display: grid;
+        grid-template-areas: 
+          "office contact"
+          "social ."
+          "copyright .";
+
+        gap: $spacer-jumbo;
+      }
+
+      &__office {
+        grid-area: office;
+        grid-template-areas: 
+        "title"
+        "bristol"
+        "cardiff";
+      }
+
+      &__social {
+        grid-area: social;
+      }
+
+      &__contact {
+        grid-area: contact;
+      }
+
+      &__copyright {
+        position: static;
+        grid-area: copyright;
+      }
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: $spacer-xxxl 0;
+
+      &__wrapper {
+        flex-direction: column;
+        gap: $spacer-jumbo;
+      }
+
+      &__office {
+        grid-template-areas: 
+        "title"
+        "bristol"
+        "cardiff";
+      }
+
+      &__social {
+        &-items {
+          gap: $spacer-m;
+        }
+      }
+
+      &__contact {
+        &-items {
+          gap: $spacer-m;
+        }
+      }
+
+      &__copyright {
+        position: static;
+      }
+  }
+}
