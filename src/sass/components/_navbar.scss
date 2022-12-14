@@ -80,7 +80,7 @@
 
       overflow: hidden;
 
-      background-color: $clr-secondary;
+      background-color: $clr-primary;
       box-shadow: 10px 0px 11px -8px rgba(34, 60, 80, 0.2);
 
       transition: all .5s ease;
@@ -279,6 +279,7 @@
       &-login {
         @include mobile-login($clr-white);
         width: 100%;
+        order: 3;
       }
     }
   }

@@ -64,7 +64,7 @@
               gap: $spacer-xs;
  
                 input {
-                  @include checkbox($clr-secondary, #0E493F);
+                  @include checkbox($clr-primary, $clr-accent);
                   order: -1;
                 }
             }

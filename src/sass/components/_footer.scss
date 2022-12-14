@@ -204,9 +204,11 @@
       }
 
       &__contact {
-        &-items {
-          gap: $spacer-m;
-        }
+        justify-content: flex-start;
+        
+          &-items {
+            gap: $spacer-m;
+          }
       }
 
       &__copyright {
