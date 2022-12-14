@@ -1,7 +1,9 @@
 'use strict';
 
-import { setUpNavbarEvents } from "./navbar";
-import { setUpFormEvents } from "./forms";
+/*
+ * @requires ./navbar.js, ./forms.js
+ */
+
 
 setUpNavbarEvents();
 setUpFormEvents();
