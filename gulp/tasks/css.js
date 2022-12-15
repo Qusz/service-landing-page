@@ -14,7 +14,6 @@ const sass = gulpSass(sassImport);
 export function css() {
   const source = conf.path.sassMain;
   return gulp.src(source)
-      .pipe(conf.require.changed(source))
       .pipe(sass())
       .pipe(autoprefixer({
           cascade: false

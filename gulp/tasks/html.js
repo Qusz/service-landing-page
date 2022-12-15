@@ -5,7 +5,6 @@ import replace from 'gulp-replace';
 export function html() {
   const source = conf.path.html;
   return gulp.src(source)
-    .pipe(conf.require.changed(source))
     .pipe(gulp.dest(conf.dest.dist))
     .pipe(conf.require.browsersync.stream());
 }
