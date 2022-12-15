@@ -56,15 +56,6 @@
             }
         }
 
-        &-lang {
-          display: none;
-
-            &-switch {
-              display: flex;
-              gap: $spacer-s;
-            }
-        }
-
         &-phone {
           white-space: nowrap;
         }
@@ -197,10 +188,6 @@
     &__menu {
       &-phone {
         font-size: $fs-18;
-      }
-
-      &-lang-switch {
-        font-size: $fs-16;
       }
     }
   }
