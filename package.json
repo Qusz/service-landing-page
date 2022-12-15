@@ -3,7 +3,10 @@
   "author": "Qusz",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
