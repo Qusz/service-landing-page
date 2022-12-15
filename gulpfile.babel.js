@@ -7,6 +7,7 @@ import { assets, assetsDev } from './gulp/tasks/assets.js';
 import { minImgage } from './gulp/tasks/images.js';
 import { browserSync } from './gulp/tasks/browsersync.js';
 import { watchFiles } from './gulp/tasks/watch.js';
+import { hashing } from './gulp/tasks/hashing.js';
 
 
 
@@ -27,7 +28,8 @@ export const build = gulp.series(
     js, 
     css, 
     assets
-  ), 
+  ),
   replaceRefs,
+  hashing,
   minImgage
 );

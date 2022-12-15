@@ -15,7 +15,7 @@ import depsOrder from 'gulp-deps-order';
 export function js() {
   const source = conf.path.js;
   return gulp.src(source)
-      .pipe(conf.require.changed(source))
+      .pipe(depsOrder())
       .pipe(
         rollup({ 
           plugins: [
@@ -25,16 +25,13 @@ export function js() {
           ] 
         }, 'umd')
       )
-      .pipe(depsOrder())
       .pipe(concat('main.js'))
       .pipe(uglify())
       .pipe(conf.require.rename({
           extname: '.min.js'
       }))
       .pipe(gulp.dest(conf.dest.dist))
-      .pipe(conf.require.browsersync.stream());
 }
-
 
 export function jsDev() {
   const source = conf.path.js;
@@ -42,6 +39,15 @@ export function jsDev() {
       .pipe(conf.require.changed(source))
       .pipe(conf.require.sourcemaps.init())
       .pipe(depsOrder())
+      .pipe(
+        rollup({ 
+          plugins: [
+            babel(), 
+            resolve(), 
+            commonjs()
+          ] 
+        }, 'umd')
+      )
       .pipe(concat('main.js'))
       .pipe(conf.require.sourcemaps.write())
       .pipe(gulp.dest(conf.dest.public))
