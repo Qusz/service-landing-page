@@ -6,7 +6,7 @@ This is a mock landing page project I built to practice SASS, form control & set
 
 ## Live preview
 
--
+https://service-landing-page-qusz.vercel.app/
 
 ## Usage
 
