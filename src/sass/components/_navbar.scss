@@ -76,6 +76,10 @@
 
       transition: all .5s ease;
 
+        & > * {
+          white-space: nowrap;
+        }
+
         &-wrapper {
           padding: $spacer-xxxl $spacer-s;
           height: 100%;
