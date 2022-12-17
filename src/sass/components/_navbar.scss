@@ -62,12 +62,12 @@
     }
 
     &__mobile-menu {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 99;
       width: 0;
-      height: 100vh;
+      height: 100%;
 
       overflow: hidden;
 
